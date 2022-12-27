@@ -81,7 +81,12 @@ for (let counter = 0; counter <= 100; counter++) {
     }
 
     if (notPrime === false) {
-                console.log(counter);
+        console.log(counter);
     }
+}
+
+            // 10
+for (let j = 0; j <= 100; j++) {
+    console.log(j)
 }
 
