@@ -15,7 +15,8 @@ console.log(notEmptyArr[2]);
 console.log(notEmptyArr[4]);
 
             // 5
-const mixedDateTypes = [2022,
+const mixedDateTypes = [
+    2022,
     'Akorede',
     4.5,
     { country: 'Finland', city: 'Helsinki' },
@@ -80,7 +81,8 @@ console.log(itCompanies.reverse())
 
             // 17
 console.log(itCompanies)
-console.log(itCompanies.slice(0,3))
+console.log(itCompanies.slice(0, 3))
+console.log(itCompanies)
 
             // 18
 console.log(itCompanies.slice(-3))
@@ -89,7 +91,8 @@ console.log(itCompanies.slice(-3))
 console.log(itCompanies.slice(2, 3))
 
             // 20
-console.log(itCompanies.splice(0,1))
+console.log(itCompanies)
+console.log(itCompanies.splice(0, 1))
 console.log(itCompanies)
 
             // 21
