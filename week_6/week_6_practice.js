@@ -57,3 +57,18 @@ let mine = 'look'
 console.log(mine.length)
 console.log(mine.length)
 
+
+let text = "ABCDEFG"
+console.log(text.split(''))
+
+const myArr = Array.from(text);
+console.log(myArr)
+
+// const array = Array.from({ length: 10 }, () => Math.floor(Math.random() * 50));
+// console.log(array);
+
+const array = Array(10) // array size is 10
+    .fill()
+    .map(() => Math.floor(50 * Math.random())); // numbers from 0-50 (exclusive)
+
+console.log(array);
