@@ -337,18 +337,300 @@ console.log(newWebTechs)
 
             // 13
 const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+let str = ''
+
+for (const tech of mernStack) {
+    console.log(tech[0])
+    console.log(str += tech[0])
+}
+
+console.log(str)
+
+            // 14
+let tech = ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+
+for (let i = 0; i < tech.length; i++) {
+    console.log(tech[i])
+}
+
+for (const element of tech) {
+    console.log(element)
+}
+
+            // 15
+fruit = ['banana', 'orange', 'mango', 'lemon']
+
+for (let i = fruit.length - 1; i >= 0; i--) {
+    console.log(fruit[i])
+}
+
+            // 16
+const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+]
+
+const actualFullstack = fullStack[0].concat(fullStack[1])
+for (const element of actualFullstack) {
+    console.log(element)/n
+}
+
+            // level 3
+            // 1 & 2
+let sortedCountries = countries.slice(0).sort()
+console.log(sortedCountries.length)
+console.log(countries)
+
+            // 3
+let sortedWebTechs = webTechs.sort()
+console.log(webTechs)
+
+let sortedMernStack = mernStack.sort()
+console.log(sortedMernStack)
 
 
 
+const Countries = [
+    'Afghanistan',
+    'Albania',
+    'Algeria',
+    'Andorra',
+    'Angola',
+    'Antigua and Barbuda',
+    'Argentina',
+    'Armenia',
+    'Australia',
+    'Austria',
+    'Azerbaijan',
+    'Bahamas',
+    'Bahrain',
+    'Bangladesh',
+    'Barbados',
+    'Belarus',
+    'Belgium',
+    'Belize',
+    'Benin',
+    'Bhutan',
+    'Bolivia',
+    'Bosnia and Herzegovina',
+    'Botswana',
+    'Brazil',
+    'Brunei',
+    'Bulgaria',
+    'Burkina Faso',
+    'Burundi',
+    'Cambodia',
+    'Cameroon',
+    'Canada',
+    'Cape Verde',
+    'Central African Republic',
+    'Chad',
+    'Chile',
+    'China',
+    'Colombi',
+    'Comoros',
+    'Congo (Brazzaville)',
+    'Congo',
+    'Costa Rica',
+    "Cote d'Ivoire",
+    'Croatia',
+    'Cuba',
+    'Cyprus',
+    'Czech Republic',
+    'Denmark',
+    'Djibouti',
+    'Dominica',
+    'Dominican Republic',
+    'East Timor (Timor Timur)',
+    'Ecuador',
+    'Egypt',
+    'El Salvador',
+    'Equatorial Guinea',
+    'Eritrea',
+    'Estonia',
+    'Ethiopia',
+    'Fiji',
+    'Finland',
+    'France',
+    'Gabon',
+    'Gambia, The',
+    'Georgia',
+    'Germany',
+    'Ghana',
+    'Greece',
+    'Grenada',
+    'Guatemala',
+    'Guinea',
+    'Guinea-Bissau',
+    'Guyana',
+    'Haiti',
+    'Honduras',
+    'Hungary',
+    'Iceland',
+    'India',
+    'Indonesia',
+    'Iran',
+    'Iraq',
+    'Ireland',
+    'Israel',
+    'Italy',
+    'Jamaica',
+    'Japan',
+    'Jordan',
+    'Kazakhstan',
+    'Kenya',
+    'Kiribati',
+    'Korea, North',
+    'Korea, South',
+    'Kuwait',
+    'Kyrgyzstan',
+    'Laos',
+    'Latvia',
+    'Lebanon',
+    'Lesotho',
+    'Liberia',
+    'Libya',
+    'Liechtenstein',
+    'Lithuania',
+    'Luxembourg',
+    'Macedonia',
+    'Madagascar',
+    'Malawi',
+    'Malaysia',
+    'Maldives',
+    'Mali',
+    'Malta',
+    'Marshall Islands',
+    'Mauritania',
+    'Mauritius',
+    'Mexico',
+    'Micronesia',
+    'Moldova',
+    'Monaco',
+    'Mongolia',
+    'Morocco',
+    'Mozambique',
+    'Myanmar',
+    'Namibia',
+    'Nauru',
+    'Nepal',
+    'Netherlands',
+    'New Zealand',
+    'Nicaragua',
+    'Niger',
+    'Nigeria',
+    'Norway',
+    'Oman',
+    'Pakistan',
+    'Palau',
+    'Panama',
+    'Papua New Guinea',
+    'Paraguay',
+    'Peru',
+    'Philippines',
+    'Poland',
+    'Portugal',
+    'Qatar',
+    'Romania',
+    'Russia',
+    'Rwanda',
+    'Saint Kitts and Nevis',
+    'Saint Lucia',
+    'Saint Vincent',
+    'Samoa',
+    'San Marino',
+    'Sao Tome and Principe',
+    'Saudi Arabia',
+    'Senegal',
+    'Serbia and Montenegro',
+    'Seychelles',
+    'Sierra Leone',
+    'Singapore',
+    'Slovakia',
+    'Slovenia',
+    'Solomon Islands',
+    'Somalia',
+    'South Africa',
+    'Spain',
+    'Sri Lanka',
+    'Sudan',
+    'Suriname',
+    'Swaziland',
+    'Sweden',
+    'Switzerland',
+    'Syria',
+    'Taiwan',
+    'Tajikistan',
+    'Tanzania',
+    'Thailand',
+    'Togo',
+    'Tonga',
+    'Trinidad and Tobago',
+    'Tunisia',
+    'Turkey',
+    'Turkmenistan',
+    'Tuvalu',
+    'Uganda',
+    'Ukraine',
+    'United Arab Emirates',
+    'United Kingdom',
+    'United States',
+    'Uruguay',
+    'Uzbekistan',
+    'Vanuatu',
+    'Vatican City',
+    'Venezuela',
+    'Vietnam',
+    'Yemen',
+    'Zambia',
+    'Zimbabwe'
+]
 
+            // 4 & 6
+let countriesWithLand = []
 
-console.log(['milk'].toString())
+for (country of Countries) {
+    if (country.includes('land')) {
+        countriesWithLand.push(country)
+    }
+}
 
+console.log(countriesWithLand)
 
+            // 5
+console.log(longestWord(Countries))
 
+            // 7
+let countryWithOnlyFourCharacters = []
 
+for (country of Countries) {
+    if (country.length === 4) {
+        countryWithOnlyFourCharacters.push(country)
+    }
+}
 
+console.log(countryWithOnlyFourCharacters)
 
+            // 8
+let countryWords = []
 
+for (country of Countries) {
+    if (country.includes(' ') || country.includes(',')) {
+        countryWords.push(country)
+    }
+}
+
+console.log(countryWords)
+
+            // 9
+let reversedCountries = Countries.reverse()
+console.log(reversedCountries)
+
+let reversedCountriesCapitalized = []
+for (country of reversedCountries) {
+    reversedCountriesCapitalized.push(country.toUpperCase())
+}
+
+console.log(reversedCountriesCapitalized)
 
 
