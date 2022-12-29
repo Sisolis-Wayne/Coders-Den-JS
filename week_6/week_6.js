@@ -44,7 +44,7 @@ const arr = Array(7).fill('#')
 // console.log(arr)
 
 for (let q = 1; q < arr.length; q++) {
-    console.log(arr[q].repeat(q))
+    console.log(arr[q].repeat(q))/n
 }
 
             // 5
@@ -358,7 +358,7 @@ for (const element of tech) {
 }
 
             // 15
-fruit = ['banana', 'orange', 'mango', 'lemon']
+let fruit = ['banana', 'orange', 'mango', 'lemon']
 
 for (let i = fruit.length - 1; i >= 0; i--) {
     console.log(fruit[i])
