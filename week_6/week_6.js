@@ -223,36 +223,126 @@ console.log(newCountriesLength)
             // 6
 let miniCountry = []
 for (const country of countries) {
-    // miniCountry.push(country.substring(0, 3))
-    miniCountry.push(countries.splice(0, 2, 3, 4, 5))
+    miniCountry.push((`${country}, ${country.substring(0, 3).toUpperCase()}, ${country.length}`).split())
 }
 
 console.log(miniCountry)
 console.log(miniCountry.length)
 
+            // 7
+let miniCountryWithLand = []
+let miniCountryWithoutLand = []
+
+for (const country of countries) {
+    if (country.includes('land')) {
+        miniCountryWithLand.push(country)
+    } else {
+        miniCountryWithoutLand.push(country)
+    }
+}
+
+console.log(miniCountryWithLand)
+console.log(miniCountryWithoutLand)
+
+            // 8
+console.log('giaia'.endsWith('ia'))
+console.log('albania'.endsWith('ia'))
+
+let miniCountryWithia = []
+let miniCountryWithoutia = []
+
+for (const country of countries) {
+    if (country.includes('ia')) {
+        miniCountryWithia.push(country)
+    } else {
+        miniCountryWithoutia.push(country)
+    }
+}
+
+console.log(miniCountryWithia)
+console.log(miniCountryWithoutia)
+
+            // 9
+const longestCountryCharacter = (country) => {
+    let longestLength = country[0].length
+    let ans = country[0]
+
+    for (let i = 1; i < country.length; i++) {
+        const actualLongestLength = country[i].length
+        if (actualLongestLength > longestLength) {
+            ans = country[i]
+            longestLength = country[i].length
+        }
+    }
+    return ans
+
+    // for (const country of countries) {
+    //     const actualLongestLength = country.length
+    //     if (actualLongestLength > longestLength) {
+    //         ans = country
+    //         longestLength = country.length
+    //     }
+    // }
+    // return ans
+}
+
+console.log(longestCountryCharacter(countries))
+
+            // 10
+let onlyCountriesWithFiveCharacters = []
+
+for (const country of countries) {
+    if (country.length === 5) {
+        onlyCountriesWithFiveCharacters.push(country)
+    }
+}
+
+console.log(onlyCountriesWithFiveCharacters)
+
+            // 11
+const webTechs = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Redux',
+    'Node',
+    'MongoDB'
+]
+
+const longestWord = (country) => {
+    let theLongestWordLength = country[0].length
+    let ans = country[0]
+
+    for (let r = 0; r < country.length; r++) {
+        const theActualLongestWordLength = country[r].length
+        if (theActualLongestWordLength > theLongestWordLength) {
+            theLongestWordLength = theActualLongestWordLength
+            ans = country[r]
+        }
+    }
+    return ans
+}
+
+console.log(longestWord(countries))
+console.log(longestWord(webTechs))
+
+            // 12
+let newWebTechs = []
+for (const tech of webTechs) {
+    newWebTechs.push((`${tech}, ${tech.length}`).split())
+}
+
+console.log(newWebTechs)
+
+            // 13
+const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(['milk'].toString())
 
 
 

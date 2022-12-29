@@ -72,3 +72,20 @@ const array = Array(10) // array size is 10
     .map(() => Math.floor(50 * Math.random())); // numbers from 0-50 (exclusive)
 
 console.log(array);
+
+function longest_str_in_array(arra) {
+    let max_str = arra[0].length;
+    let ans = arra[0];
+    for (let i = 1; i < arra.length; i++) {
+        const maxi = arra[i].length;
+        if (maxi > max_str) {
+            ans = arra[i];
+            max_str = maxi;
+        }
+    }
+    return ans;
+}
+
+console.log(longest_str_in_array(["ab", "abcde", "abcd"]));
+console.log(longest_str_in_array(["ab", "abcde", "abcd", "abcdefg"]));
+console.log(longest_str_in_array(["ab", "abc", "abcd"]));
