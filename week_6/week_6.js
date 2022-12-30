@@ -144,11 +144,13 @@ console.log(array);
             // 1
 const randomId = () => {
     let theRandomId = ''
+
     let charactersAllowed = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     let lengthOfRandom = Math.floor(Math.random() * 30) + 1
     for (let z = 0; z < lengthOfRandom; z++) {
         theRandomId += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length));
     }
+    
     return theRandomId;
 }
 
@@ -159,10 +161,12 @@ console.log(randomId())
 // function randomHexNum()
 const randomHexNum = () => {
     let theRandomHexNum = ''
+
     let theCharactersAllowed = 'abcdef0123456789'
     for (let y = 0; y < 6; y++) {
         theRandomHexNum += theCharactersAllowed.charAt(Math.floor(Math.random() * theCharactersAllowed.length))
     }
+
     return '#' + theRandomHexNum;
 }
 
@@ -198,6 +202,7 @@ const countries = [
     'Japan',
     'Kenya'
 ]
+
 console.log(countries.length)
 
 let newCountries = []
@@ -340,8 +345,9 @@ const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 let str = ''
 
 for (const tech of mernStack) {
-    console.log(tech[0])
-    console.log(str += tech[0])
+    // console.log(tech[0])
+    // console.log(str += tech[0])
+    str += tech[0]
 }
 
 console.log(str)
@@ -351,6 +357,7 @@ let tech = ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
 
 for (let i = 0; i < tech.length; i++) {
     console.log(tech[i])
+    // console.log(tech[i])/n
 }
 
 for (const element of tech) {
