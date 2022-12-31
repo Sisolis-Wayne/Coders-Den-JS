@@ -146,8 +146,8 @@ const randomId = () => {
     let theRandomId = ''
 
     let charactersAllowed = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    let lengthOfRandom = Math.floor(Math.random() * 30) + 1
-    for (let z = 0; z < lengthOfRandom; z++) {
+
+    for (let z = 0; z < 30; z++) {
         theRandomId += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length));
     }
     

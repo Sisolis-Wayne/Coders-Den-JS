@@ -26,6 +26,7 @@ let b = 7;
 // } else (
 //     console.log(`${a} is lesser than ${b}`)
 // )
+
 // using ternary operators
 // a > b ? console.log(`${a} is greater than ${b}`) : console.log(`${a} is lesser than ${b}`)
 

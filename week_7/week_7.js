@@ -166,7 +166,7 @@ console.log(showDateTime())
 const swapValues = (x, y) => {
     let a = x
     let m = y
-    return `${m}, ${a}`
+    return `x =>  ${m}, y => ${a}`
 }
 
 console.log(swapValues(3, 4))
@@ -271,31 +271,186 @@ console.log(sumOfEven(5))
 console.log(sumOfEven(10))
 
             // 13
+const evensAndOdds = (num) => {
+    let count = [0, 0]
 
+    for (let i = 0; i <= num; i++) {
+        if (i % 2 === 0) {
+            count[0]++
+        }
+        if (i % 2 !== 0) {
+            count[1]++
+        }
+    }
 
+    return `The number of odds are ${count[1]} and The number of evens are ${count[0]}`
+}
 
+console.log(evensAndOdds(100));
 
+            // 14
+const sum = (...args) => {
+    let sumNums = 0
 
+    for (let i = 0; i < args.length; i++) {
+        sumNums += args[i]
+    }
 
+    return sumNums
+}
 
+console.log(sum(1, 2, 3) )
+console.log(sum(1, 2, 3, 4) )
 
+            // 15
+const randomUserIp = () => {
+    const w = Math.floor(Math.random() * 256)
+    const x = Math.floor(Math.random() * 256)
+    const y = Math.floor(Math.random() * 256)
+    const z = Math.floor(Math.random() * 256)
 
+    let userIp = `${w}.${x}.${y}.${z}`
+    return userIp
+}
 
+console.log(randomUserIp())
 
+            // 16
+const randomMacAddress = () => {
+    let theRandomMacAddress = ''
+    let theRandomMacAddress2 = ''
+    let theRandomMacAddress3 = ''
+    let theRandomMacAddress4 = ''
+    let theRandomMacAddress5 = ''
+    let theRandomMacAddress6 = ''
+    let charactersAllowed = '0123456789abcdef'
 
+    for (let i = 0; i < 2; i++) {
+        theRandomMacAddress += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
+    
+    for (let j = 0; j < 2; j++) {
+        theRandomMacAddress2 += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
 
+    for (let k = 0; k < 2; k++) {
+        theRandomMacAddress3 += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
 
+    for (let l = 0; l < 2; l++) {
+        theRandomMacAddress4 += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
 
+    for (let m = 0; m < 2; m++) {
+        theRandomMacAddress5 += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
+    for (let n = 0; n < 2; n++) {
+        theRandomMacAddress6 += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
 
+    
 
+    return `${theRandomMacAddress}:${theRandomMacAddress2}:${theRandomMacAddress3}:${theRandomMacAddress4}:${theRandomMacAddress5}:${theRandomMacAddress6}`
+}
 
+console.log(randomMacAddress())
 
+            // 17
+const randomHexaNumberGenerator = () => {
+    let theRandomHexNum = ''
+    let charactersAllowed = 'abcdef0123456789'
 
+    for (let i = 0; i < 6; i++) {
+        theRandomHexNum += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
 
+    return `#${theRandomHexNum}`;
+}
 
+console.log(randomHexaNumberGenerator())
 
+            // 18
+const userIdGenerator = () => {
+    let theRandomId = ''
 
+    let charactersAllowed = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
+    for (let z = 0; z < 7; z++) {
+        theRandomId += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length));
+    }
+
+    return theRandomId;
+}
+
+console.log(userIdGenerator())
+
+            // level 3
+            // 1
+const userIdGeneratedByUser = () => {
+    let numOfId = prompt('Enter your preferred number of Id to be generated')
+    let numOfCharacters = prompt('Enter your preferred number of characters to be generated')
+    // let result = ``
+    let theRandomId = ``
+    let charactersAllowed = `0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`
+
+    for (let y = 0; y < Number(numOfId); y++) {
+        if (y < (numOfId - 1)) {
+            let result = ``
+            
+            for (let z = 0; z < Number(numOfCharacters); z++) {
+                result += `${charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))}`;
+            }
+    
+            theRandomId += `${result}, `
+        }
+
+        if (y === (numOfId - 1)) {
+            let result = ``
+
+            for (let z = 0; z < Number(numOfCharacters); z++) {
+                result += `${charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))}`;
+            }
+
+            theRandomId += `${result}`
+        }
+    }
+
+    return theRandomId;
+}
+
+// console.log(userIdGeneratedByUser(3, 4))
+
+            // 2
+const rgbColorGenerator  = () => {
+    const RR = Math.floor(Math.random() * 256)
+    const GG = Math.floor(Math.random() * 256)
+    const BB = Math.floor(Math.random() * 256)
+    let color = `rgb(${RR}, ${GG}, ${BB})`
+    return color;
+}
+
+console.log(rgbColorGenerator())
+console.log(rgbColorGenerator())
+
+            // 3
+const arrayOfHexaColors = () => {
+    let theRandomHexNum = ''
+    let charactersAllowed = 'abcdef0123456789'
+    let arr = []
+
+    for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
+            theRandomHexNum += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+        }
+    }
+    
+    arr.push(`#${theRandomHexNum}`)
+
+    return arr
+    // return `#${theRandomHexNum}`;
+}
+
+console.log(arrayOfHexaColors())
 
 
 
