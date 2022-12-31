@@ -129,6 +129,8 @@ let g = 12
 console.log(g.toString(16))
 console.log(`0${g.toString(16)}`)
 
+/// try median of an array
+
 
 
 

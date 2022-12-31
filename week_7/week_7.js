@@ -299,7 +299,7 @@ const sum = (...args) => {
     return sumNums
 }
 
-console.log(sum(1, 2, 3) )
+console.log(sum(1, 2, -3) )
 console.log(sum(1, 2, 3, 4) )
 
             // 15
@@ -525,15 +525,83 @@ const generateColors = (type, number) => {
 
 console.log(generateColors('hexa', 3))
 
+            // 8
+const shuffleArray = (arr) => {
+    let arri = []
 
+    for (let j = 0; j <= arr.length; j++) {
 
+    }
+}
 
+            // 9
+const factorial = (r) => {
+    if (r === 0 || r === 1) {
+        return 1
+    }
+    if (r > 1) {
+        return factorial(r - 1) * r
+    }
+} 
 
+console.log(factorial(0))
+console.log(factorial(2))
+console.log(factorial(3))
+console.log(factorial(4))
 
+            // 10
+const isEmpty = (arr) => {
+    if (arr.length <= 0) {
+        return `It\'s empty`
+    } else {
+        return `It\'s not empty`
+    }
+}
 
+let arrrr = []
+console.log(isEmpty(countries))
+console.log(isEmpty(arrrr))
 
+            // 11
+// Done in level 2, 14
 
+            // 12
+const sumOfArrayItems = (arr) => {
+    let sum = 0
 
+    for (let j = 0; j < arr.length; j++) {
+        if (typeof (arr[j]) === 'number') {
+            sum += arr[j]
+        }
+        if (typeof (arr[j]) === 'string') {
+            sum = 'No need to sum. Array contains string(s)'
+            break
+        }
+    }
 
+    return sum
+}
 
+console.log(sumOfArrayItems([1, 2, 3, 'ant', 5]))
+console.log(sumOfArrayItems([1, 2, 3, 5]))
+
+const average = (arr) => {
+    let sum = 0
+
+    for (let j = 0; j < arr.length; j++) {
+        if (typeof (arr[j]) === 'number') {
+            sum += arr[j]
+        }
+        if (typeof (arr[j]) === 'string') {
+            sum = 'No need to sum. Array contains string(s)'
+            break
+        }
+    }
+
+    if (typeof (sum) === 'number') sum = sum / arr.length
+    return sum
+}
+
+console.log(average([1, 2, 3, 4]))
+console.log(average([1, 2, 3, 4, 'ant']))
 
