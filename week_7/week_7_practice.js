@@ -82,3 +82,64 @@ function weightOfObject(mass, gravity = 9.81) {
 
 console.log('Weight of an object in Newton: ', weightOfObject(100)) // 9.81 gravity at the surface of Earth
 console.log('Weight of an object in Newton: ', weightOfObject(100, 1.62)) // gravity at surface of Moon
+
+
+
+
+
+const newRGB = () => {
+    let newarr = Array.from({ length: 3 }, () => Math.floor(Math.random() * 10))
+    let rgbColors = `rgb(${newarr[0]}, ${newarr[1]}, ${newarr[2]})`
+    // console.log(newarr)
+    return rgbColors
+}
+
+console.log(newRGB())
+                                                
+const arrayOfNewRGB = () => {
+    let arr = []
+
+    for (let i = 0; i < 3; i++) {
+        let rgbColors = ``
+        let newarr = Array.from({ length: 3 }, () => Math.floor(Math.random() * 10))
+        rgbColors = `rgb(${newarr[0]}, ${newarr[1]}, ${newarr[2]})`
+        // console.log(newarr)
+        arr.push(rgbColors)
+    }
+
+    return arr
+}
+
+console.log(arrayOfNewRGB())
+
+
+console.log(`The sum of 2 and 3\nis 5`)
+
+let a = 20
+let b = 3
+console.log(`The sum of ${a} and ${b} is \n${a + b}`)
+
+console.log(parseInt('1f4', 16))
+
+
+let cc = 'c'
+console.log(`0${cc}`)
+
+let g = 12
+console.log(g.toString(16))
+console.log(`0${g.toString(16)}`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -421,11 +421,15 @@ const userIdGeneratedByUser = () => {
 // console.log(userIdGeneratedByUser(3, 4))
 
             // 2
+// Another method in practice file
 const rgbColorGenerator  = () => {
+    let color = ``
+
     const RR = Math.floor(Math.random() * 256)
     const GG = Math.floor(Math.random() * 256)
     const BB = Math.floor(Math.random() * 256)
-    let color = `rgb(${RR}, ${GG}, ${BB})`
+
+    color = `rgb(${RR}, ${GG}, ${BB})`
     return color;
 }
 
@@ -433,45 +437,93 @@ console.log(rgbColorGenerator())
 console.log(rgbColorGenerator())
 
             // 3
-const arrayOfHexaColors = () => {
-    let theRandomHexNum = ''
+const arrayOfHexaColors = (num) => {
+    // let theRandomHexNum = ''
     let charactersAllowed = 'abcdef0123456789'
     let arr = []
 
-    for (let i = 0; i < 4; i++) {
-        for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < num; i++) {
+        let theRandomHexNum = ''
+
+        for (let i = 0; i < 6; i++) {
             theRandomHexNum += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
         }
+
+        arr.push(`#${theRandomHexNum}`)
     }
     
-    arr.push(`#${theRandomHexNum}`)
 
     return arr
     // return `#${theRandomHexNum}`;
 }
 
-console.log(arrayOfHexaColors())
+console.log(arrayOfHexaColors(4))
 
+            // 4
+// Another method in practice file
+const arrayOfRgbColors = (num) => {
+    let arr = []
 
+    for (let i = 0; i < num; i++) {
+        let color = ``
+    
+        const RR = Math.floor(Math.random() * 256)
+        const GG = Math.floor(Math.random() * 256)
+        const BB = Math.floor(Math.random() * 256)
+    
+        color = `rgb(${RR}, ${GG}, ${BB})`
+        arr.push(color)
+    }
 
+    return arr
+}
 
+console.log(arrayOfRgbColors(4))
+console.log(arrayOfRgbColors(2))
 
+            // 6
+const convertHexaToRgb = (hex) => {
+    // let arr = []
+    let x = parseInt(`${hex[1]}${hex[2]}`, 16)
+    let y = parseInt(`${hex[3]}${hex[4]}`, 16)
+    let z = parseInt(`${hex[5]}${hex[6]}`, 16)
 
+    // arr.push(x, y, z)
+    // return `rgb(${arr[0]}, ${arr[1]}, ${arr[2]})`
+    return `rgb(${x}, ${y}, ${z})`
+    // return `rgb(${arr})`
+}
 
+console.log(convertHexaToRgb('#800fff'))
+console.log(convertHexaToRgb('#0c8000'))
+console.log(convertHexaToRgb('#C0C0C0'))
 
+            // 6
+const convertRgbToHexa = (r, g, b) => {
+    let x = r.toString(16)
+    let y = g.toString(16)
+    let z = b.toString(16)
 
+    if (r <= 15) x = `0${x}`
+    if (g <= 15) y = `0${y}`
+    if (b <= 15) z = `0${z}`
 
+    return `#${x}${y}${z}`
+}
 
+console.log(convertRgbToHexa(15, 15, 15))
 
+            // 7
+const generateColors = (type, number) => {
+    if(type === 'hexa') {
+        return arrayOfHexaColors(number)
+    }
+    if (type === 'rgb') {
+        return arrayOfRgbColors(number)
+    }
+}
 
-
-
-
-
-
-
-
-
+console.log(generateColors('hexa', 3))
 
 
 
