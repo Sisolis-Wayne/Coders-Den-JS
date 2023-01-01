@@ -652,22 +652,49 @@ const allItemsAreUnique = (arr) => {
 
 console.log(allItemsAreUnique([1, 2, 3, 4]))
 console.log(allItemsAreUnique([1, 2, 2, 4]))
+console.log(allItemsAreUnique([1, 2, 3, 4, 5]))
+
+            // 17
+const allItemsSameDataType = (arr) => {
+    for (let j = 1; j < arr.length; j++) {
+        if (typeof (arr[0]) !== typeof (arr[j])) {
+            return `All the items are not of same data type`
+        }
+    }
+
+    return `All items are of same data type`
+}
+
+console.log(allItemsSameDataType([1, 2, 3, 4]))
+console.log(allItemsSameDataType([1, 2, 3, 4, 'ant']))
+
+            // 18
+// to be done later
+
+            // 19
+const sevenRandomNumbers = (arr) => {
+    let arri = Array.from({ length : 7 }, () => Math.floor(Math.random() * 10))
+    return arri
+}
+
+console.log(sevenRandomNumbers())
+console.log(sevenRandomNumbers())
+console.log(sevenRandomNumbers())
+
+            // 20
+let arrara = ['m', 'v', 'g', 't']
+// console.log(arrara.slice()))))))))))))))
+console.log(arrara)
+console.log(arrara.slice())
 
 
 
 
+const reverseCountries = (arr) => {
+    return arr.slice().reverse()
+}
 
-
-
-
-
-
-
-
-
-
-
-
+console.log(reverseCountries(countries))
 
 
 
