@@ -524,15 +524,22 @@ const generateColors = (type, number) => {
 }
 
 console.log(generateColors('hexa', 3))
+console.log(generateColors('rgb', 3))
 
             // 8
+// still needs some modification. Objective not yet achieved.
 const shuffleArray = (arr) => {
     let arri = []
 
-    for (let j = 0; j <= arr.length; j++) {
-
+    for (let j = 0; j < arr.length; j++) {
+        arri.push(arr[Math.floor(Math.random() * arr.length)])
     }
+
+    return arri
 }
+
+console.log(shuffleArray([1, 2, 3, 4]))
+console.log(shuffleArray([1, 6, 5, 4]))
 
             // 9
 const factorial = (r) => {
@@ -570,9 +577,7 @@ const sumOfArrayItems = (arr) => {
     let sum = 0
 
     for (let j = 0; j < arr.length; j++) {
-        if (typeof (arr[j]) === 'number') {
-            sum += arr[j]
-        }
+        if (typeof (arr[j]) === 'number') sum += arr[j]
         if (typeof (arr[j]) === 'string') {
             sum = 'No need to sum. Array contains string(s)'
             break
@@ -585,15 +590,14 @@ const sumOfArrayItems = (arr) => {
 console.log(sumOfArrayItems([1, 2, 3, 'ant', 5]))
 console.log(sumOfArrayItems([1, 2, 3, 5]))
 
+            // 13
 const average = (arr) => {
     let sum = 0
 
     for (let j = 0; j < arr.length; j++) {
-        if (typeof (arr[j]) === 'number') {
-            sum += arr[j]
-        }
+        if (typeof (arr[j]) === 'number') sum += arr[j]
         if (typeof (arr[j]) === 'string') {
-            sum = 'No need to sum. Array contains string(s)'
+            sum = 'No need to find average. Array contains string(s)'
             break
         }
     }
@@ -602,6 +606,140 @@ const average = (arr) => {
     return sum
 }
 
-console.log(average([1, 2, 3, 4]))
+console.log(average([1, 2, 3, 5]))
 console.log(average([1, 2, 3, 4, 'ant']))
+
+            // 14
+const modifyArray = (arry) => {
+    let arr = []
+    if (arry.length >= 5) {
+        for (let j = 0; j < arry.length; j++) {
+            if (j !== 4) arr.push(arry[j])
+    
+            if (j === 4) {
+                arr.push(arry[j].toUpperCase())
+            }
+        }
+    }
+    if (arry.length < 5) return `Not found`
+
+    return arr
+}
+
+console.log(modifyArray(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carrot']))
+console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon', 'Microsoft', 'IBM']))
+console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']))
+
+            // 15
+const isPrime = (num) => {
+    for (let j = 2, s = Math.sqrt(num); j <= s; j++) if (num % j === 0) return false
+    return num > 1
+}
+
+console.log(isPrime(53))
+
+            // 16
+const allItemsAreUnique = (arr) => {
+    for (let j = 0; j < arr.length; j++) {
+        for (let k = 0; k < arr.length; k++) {
+            if (j === k) continue
+            if (arr[j] === arr[k]) return `All items are not unique`
+        }
+    }
+
+    return `All items are unique`
+}
+
+console.log(allItemsAreUnique([1, 2, 3, 4]))
+console.log(allItemsAreUnique([1, 2, 2, 4]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
