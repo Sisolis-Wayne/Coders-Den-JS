@@ -682,14 +682,6 @@ console.log(sevenRandomNumbers())
 console.log(sevenRandomNumbers())
 
             // 20
-let arrara = ['m', 'v', 'g', 't']
-// console.log(arrara.slice()))))))))))))))
-console.log(arrara)
-console.log(arrara.slice())
-
-
-
-
 const reverseCountries = (arr) => {
     return arr.slice().reverse()
 }
