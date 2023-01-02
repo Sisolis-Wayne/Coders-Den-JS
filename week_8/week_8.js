@@ -164,39 +164,196 @@ console.log(countries['population'])
 console.log(countries['languages'])
 
 
+            // level 3
+            // 1
+const personalAccount = {
+    firstName: 'Akorede',
+    lastName: 'Mohammed',
+    incomes: {
+        salary: 100000000,
+        bonus: 3000000,
+        roi: 6500000
+    },
+    expenses: {
+        workers: 10000000,
+        investment: 20000000,
+        family: 3000000,
+        charity: 2000000
+    },
+    totalIncome: function () {
+        return `${this['incomes']['salary'] + this['incomes']['bonus'] + this['incomes']['roi']}`
+    },
+    totalExpense: function () {
+        return `${this['expenses']['workers'] + this['expenses']['investment'] + this['expenses']['family'] + this['expenses']['charity']}`
+    },
+    accountInfo: function () {
+        return `${this.firstName} ${this.lastName}`
+    },
+    addIncome: function () {
+        return `${this.totalIncome()}`
+    },
+    addExpense: function () {
+        return `${this.totalExpense()}`
+    },
+    accountBalance: function () {
+        return `${this['incomes']['salary'] + this['incomes']['bonus'] + this['incomes']['roi'] - (this['expenses']['workers'] + this['expenses']['investment'] + this['expenses']['family'] + this['expenses']['charity'])}`
+    }
+}
+
+console.log(personalAccount.totalIncome())
+console.log(personalAccount.totalExpense())
+console.log(personalAccount.addIncome())
+console.log(personalAccount.addExpense())
+console.log(personalAccount.accountInfo())
+console.log(personalAccount.accountBalance())
+
+            // 2a
+const signUp = (un, em, pw) => {
+    // un, em, pw refer to username, email, password respectively
+    for (const select of Users) {
+        if (select.username === un) return `You already have an account`
+    }
+
+    let newAccount = {}
+    let charactersAllowed = '0123456789abcdefghijklmnopqrstuvwxyz'
+    let generatedId = ``
+
+    for (let j = 0; j < 6; j++) {
+        generatedId += charactersAllowed.charAt(Math.floor(Math.random() * charactersAllowed.length))
+    }
+
+    newAccount._id = generatedId
+    newAccount.username = un
+    newAccount.email = em
+    newAccount.password = Number(pw)
+    newAccount.createdAt = '01/01/2023 08:45 AM'
+    newAccount.isLoggedIn = 'false'
+
+    Users.push(newAccount)
+
+    return Users
+}
+
+const Users = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt: '08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt: '08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt: '08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt: '08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt: '08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+]
+
+console.log(signUp('Akorede', 'mohammedakoredest@gmail.com', 123456))
+console.log(Users[5].username)
+console.log(signUp('Akorede', 'mohammedakoredest@gmail.com', 123456))
+
+            // 2b
+const signIn = (un, pw) => {
+    for (const select of Users) {
+        if (select.username === un && select.password === pw) {
+            select.isLoggedIn = true
+            return select
+        }
+    }
+}
+
+console.log(Users[4].username.toLowerCase())
+console.log(Users[4].isLoggedIn)
+Users[4].isLoggedIn = true
+console.log(Users[4].isLoggedIn) 
+
+console.log(Users[5].isLoggedIn)
+console.log(signIn('Akorede', 123456))
+console.log(Users[5].isLoggedIn)
+
+            // 3a
+const likeProduct = (id, nameOfProduct, Rate) => {
+    let rateInfo = {}
+
+    for (select of products) {
+        if (select.name.toLowerCase() === nameOfProduct.toLowerCase()) {
+            rateInfo.userId = id
+            rateInfo.rate = Rate
+            select.ratings.push(rateInfo)
+            break
+        }
+    }
+
+    return products
+}
+
+const products = [
+    {
+        _id: 'eedfcf',
+        name: 'mobile phone',
+        description: 'Huawei Honor',
+        price: 200,
+        ratings: [
+            { userId: 'fg12cy', rate: 5 },
+            { userId: 'zwf8md', rate: 4.5 }
+        ],
+        likes: []
+    },
+    {
+        _id: 'aegfal',
+        name: 'Laptop',
+        description: 'MacPro: System Darwin',
+        price: 2500,
+        ratings: [],
+        likes: ['fg12cy']
+    },
+    {
+        _id: 'hedfcg',
+        name: 'TV',
+        description: 'Smart TV:Procaster',
+        price: 400,
+        ratings: [{ userId: 'fg12cy', rate: 5 }],
+        likes: ['fg12cy']
+    }
+]
 
 
+console.log(likeProduct('akmo13', 'TV', 4))
+console.log(likeProduct('siwa15', 'TV', 5))
+console.log(likeProduct('siwa15', 'Laptop', 5))
+console.log(likeProduct('siuu15', 'laptoP', 5))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // 3b & 4
+// to be done later
 
 
 
