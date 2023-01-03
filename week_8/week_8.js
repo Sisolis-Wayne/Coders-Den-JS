@@ -301,7 +301,7 @@ console.log(signIn('Akorede', 123456))
 console.log(Users[5].isLoggedIn)
 
             // 3a
-const likeProduct = (id, nameOfProduct, Rate) => {
+const rateProduct = (id, nameOfProduct, Rate) => {
     let rateInfo = {}
 
     for (select of products) {
@@ -347,20 +347,36 @@ const products = [
 ]
 
 
-console.log(likeProduct('akmo13', 'TV', 4))
-console.log(likeProduct('siwa15', 'TV', 5))
-console.log(likeProduct('siwa15', 'Laptop', 5))
-console.log(likeProduct('siuu15', 'laptoP', 5))
+console.log(rateProduct('akmo13', 'TV', 4))
+console.log(rateProduct('siwa15', 'TV', 5))
+console.log(rateProduct('siwa15', 'Laptop', 5))
+console.log(rateProduct('siuu15', 'laptoP', 5))
 
-            // 3b & 4
+// console.log(products[2])
+// console.log(products[2].ratings[0])
+// console.log(products[2].ratings[0].rate)
+// console.log(products[2].ratings[1].rate)
+// console.log(products[2].ratings[2].rate)
+
+            // 3b
+const averageRating = (nameOfProduct) => {
+    let result = 0
+
+    for (select of products) {
+        if (select.name.toLowerCase() === nameOfProduct.toLowerCase()) {
+            for (j = 0; j < select.ratings.length; j++) {
+                result += select.ratings[j].rate
+            }
+            return `${result / select.ratings.length}`
+        }
+    }
+}
+
+console.log(averageRating('lapTOp'))
+console.log(averageRating('tv'))
+
+            // 4
 // to be done later
-
-
-
-
-
-
-
 
 
 
