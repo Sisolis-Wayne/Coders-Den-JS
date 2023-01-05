@@ -102,6 +102,50 @@ console.log(petCounts);
 }
 */
 
+const entries = new Map([
+    ['foo', 'bar']
+]);
+
+console.log(entries)
+
+const obj = Object.fromEntries([['foo', 'bar']]);
+
+console.log(obj);
+
+
+const cou = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4
+}
+
+console.log(cou)
+
+const me = Object.entries(cou)
+console.log(me)
+
+let cereal = []
+
+for (let j = 0; j < me.length; j++) {
+    console.log(me[j])
+    let milk = []
+    milk.push(me[j])
+    cereal.push(Object.fromEntries(milk))
+}
+
+console.log(cereal)
+
+
+
+const red = me.reduce((acc, curr) => {
+    let milk = []
+    milk.push(curr)
+    acc.push(Object.fromEntries(milk))
+    return acc
+}, [])
+
+console.log(red)
 
 
 

@@ -15,14 +15,14 @@ export const Countries = [
     flag: 'https://restcountries.eu/data/ala.svg',
     currency: 'Euro'
   },
-//   {
-//     name: 'Albania',
-//     capital: 'Tirana',
-//     languages: ['Albanian'],
-//     population: 2886026,
-//     flag: 'https://restcountries.eu/data/alb.svg',
-//     currency: 'Albanian lek'
-//   },
+  {
+    name: 'Albania',
+    capital: 'Tirana',
+    languages: ['Albanian'],
+    population: 2886026,
+    flag: 'https://restcountries.eu/data/alb.svg',
+    currency: 'Albanian lek'
+  },
   {
     name: 'Algeria',
     capital: 'Algiers',

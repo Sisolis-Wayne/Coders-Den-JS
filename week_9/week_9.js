@@ -130,10 +130,13 @@ console.log(Countries)
 const categorizeCountries = (arr, pattern) => {
     let newArr = []
 
-    for (const select of arr) {
-        if (select.name.includes(pattern)) newArr.push(select.name)
-    }
+    // for (const select of arr) {
+    //     if (select.name.includes(pattern)) newArr.push(select.name)
+    // }
 
+    // return newArr
+
+    arr.filter((item) => item.name.includes(pattern) ? newArr.push(item.name) : '')
     return newArr
 }
 
@@ -150,7 +153,6 @@ const justTheFirstLetter = (arr) => {
         } else {
             acc[curr[0]]++
         }
-
         return acc
     }, {})
 }
@@ -158,44 +160,65 @@ const justTheFirstLetter = (arr) => {
 console.log(justTheFirstLetter(Countries))
 
 
+// using map
+const justTheFirstLetter2 = (arr) => {
+    return Object.entries(arr.map((item) => item.name[0]).reduce((acc, curr) => {
+        if (!acc[curr[0]]) {
+            acc[curr[0]] = 1
+        } else {
+            acc[curr[0]]++
+        }
+        return acc
+    }, {})).reduce((acc, curr) => {
+        let milk = []
+        milk.push(curr)
+        acc.push(Object.fromEntries(milk))
+        return acc
+    }, [])
+}
 
+console.log(justTheFirstLetter2(Countries))
 
+            // 5
+// const getFirstTenCountries = (arr) => {
+//     return arr.map((item) => item.name).reduce((acc, curr, idx) => {
+//         if (idx < 10) acc.push(curr)
+//         return acc
+//     }, [])
+// }
 
+const getFirstTenCountries = (arr) => arr.map((item) => item.name).filter((item) => arr.map((item) => item.name).indexOf(item) < 10)
 
+console.log(getFirstTenCountries(Countries))
 
+            // 6
+const getLastTenCountries = (arr) => arr.map((item) => item.name).filter((item) => arr.map((item) => item.name).indexOf(item) > arr.map((item) => item.name).length - 11)
 
+console.log(getLastTenCountries(Countries))
 
+            // 7
+const users = [
+    { name: 'Asabeneh', age: 150 },
+    { name: 'Brook', age: 50 },
+    { name: 'Eyob', age: 100 },
+    { name: 'Elias', age: 22 },
+]
+users.sort((a, b) => {
+    if (a.age < b.age) return -1
+    if (a.age > b.age) return 1
+    return 0
+})
+console.log(users)
 
+const mostSpokenLanguages = (arr) => {
+    return arr.sort((a, b) => {
+        if (a.population > b.population) return -1
+        if (a.population < b.population) return 1
+        return 0
+    })
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(mostSpokenLanguages(Countries))
 
 
 
