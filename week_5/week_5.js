@@ -121,7 +121,9 @@ console.log(txt.indexOf('.'))
 // console.log(txt.splice(36, 1))
 // console.log(txt.splice())
 let ss = txt.replace(/,/g, "").replace('.', "").replace('.', "").split(' ')
+let ss1 = txt.replace(/,/g, "").replace('.', "").replace('.', "").split(' ').join(' ')
 console.log(ss)
+console.log(ss1)
 console.log(ss.length)
 // console.log(txt.replace(',', ''))
 let sss = txt.replace(/[^\w\s\']|_/g, "").replace(/\s+/g, " ");
@@ -190,7 +192,7 @@ console.log(diffMaxAvg)
 console.log(diffMaxAvg === diffMinAvg)
 diffMaxAvg === diffMinAvg ? console.log('yes') : console.log('no')
 
-// 1
+1
 const countries = [
     'Afghanistan',
     'Albania',
