@@ -75,7 +75,7 @@ console.log(sum)
 
             // 18
 // let 
-const newSentence = countries.reduce((acc, curr, idx) => idx === (countries.length - 1) ? `${acc}, and ${curr} are north European countries` : acc + ', ' + curr, 'Estonia')
+const newSentence = countries.reduce((acc, curr, idx) => idx === (countries.length - 1) ? `${acc}, and ${curr} are North European countries` : acc + ', ' + curr, 'Estonia')
 console.log(newSentence)
 
 
