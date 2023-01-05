@@ -140,41 +140,22 @@ const categorizeCountries = (arr, pattern) => {
 console.log(categorizeCountries(Countries, 'ia'))
 
             // 4
-const startsWithLetter = Countries.reduce((acc, curr) => {
-    acc.push(curr.name)
-    return acc
-}, []).reduce((acc, curr) => {
-    if (!acc[curr[0]]) {
-        acc[curr[0]] = 1
-    } else {
-        acc[curr[0]]++
-    }
+const justTheFirstLetter = (arr) => {
+    return arr.reduce((acc, curr) => {
+        acc.push(curr.name)
+        return acc
+    }, []).reduce((acc, curr) => {
+        if (!acc[curr[0]]) {
+            acc[curr[0]] = 1
+        } else {
+            acc[curr[0]]++
+        }
 
-    return acc
-}, {})
+        return acc
+    }, {})
+}
 
-
-// console.log(Countries[0].name)
-// console.log(Countries[0][name][0])
-console.log(Countries[0].name[0])
-console.log(startsWithLetter)
-
-// const okay = startsWithLetter.reduce((acc, curr) => {
-//     if (!acc[curr[0]]) {
-//         acc[curr[0]] = 1
-//     } else {
-//         acc[curr[0]]++
-//     }
-
-//     return acc
-// }, {})
-
-// console.log(okay)
-
-
-
-
-
+console.log(justTheFirstLetter(Countries))
 
 
 
