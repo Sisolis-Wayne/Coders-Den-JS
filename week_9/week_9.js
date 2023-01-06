@@ -210,16 +210,18 @@ users.sort((a, b) => {
 })
 console.log(users)
 
-const mostSpokenLanguages = (arr) => {
-    return arr.sort((a, b) => {
+console.log(Countries)
+const mostSpokenLanguages = (arr, index) => {
+    return arr.slice().sort((a, b) => {
         if (a.population > b.population) return -1
         if (a.population < b.population) return 1
         return 0
-    })
+    }).slice(0, index)
 }
 
-console.log(mostSpokenLanguages(Countries))
-
+console.log(mostSpokenLanguages(Countries, 10))
+console.log(mostSpokenLanguages(Countries, 3))
+console.log(Countries)
 
 
 
