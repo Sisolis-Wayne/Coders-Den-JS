@@ -124,6 +124,7 @@ console.log(cou)
 
 const me = Object.entries(cou)
 console.log(me)
+console.log(Object.fromEntries(me))
 
 let cereal = []
 
@@ -146,6 +147,8 @@ const red = me.reduce((acc, curr) => {
 }, [])
 
 console.log(red)
+
+
 
 
 

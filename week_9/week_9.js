@@ -91,6 +91,7 @@ console.log(allContainsLand)
 
             // 22
 
+
             // 23
 console.log(countries)
 const firstCountryContainingSixLettersOnly = countries.find((item) => item.length === 6)
@@ -112,6 +113,7 @@ console.log(indexOfRussia)
             // 1
 console.log(products)
 const totalPriceOfProducts = products.map((item) => item.price).filter((item) => typeof (item) === 'number').reduce((acc, curr) => acc + curr, 0)
+
 console.log(totalPriceOfProducts)
 // console.log(products)
 
@@ -161,8 +163,7 @@ console.log(justTheFirstLetter(Countries))
 
 
 // using map
-const justTheFirstLetter2 = (arr) => {
-    return Object.entries(arr.map((item) => item.name[0]).reduce((acc, curr) => {
+const justTheFirstLetter2 = (arr) => Object.entries(arr.map((item) => item.name[0]).reduce((acc, curr) => {
         if (!acc[curr[0]]) {
             acc[curr[0]] = 1
         } else {
@@ -175,7 +176,6 @@ const justTheFirstLetter2 = (arr) => {
         acc.push(Object.fromEntries(milk))
         return acc
     }, [])
-}
 
 console.log(justTheFirstLetter2(Countries))
 
@@ -197,32 +197,131 @@ const getLastTenCountries = (arr) => arr.map((item) => item.name).filter((item) 
 console.log(getLastTenCountries(Countries))
 
             // 7
-const users = [
-    { name: 'Asabeneh', age: 150 },
-    { name: 'Brook', age: 50 },
-    { name: 'Eyob', age: 100 },
-    { name: 'Elias', age: 22 },
-]
-users.sort((a, b) => {
-    if (a.age < b.age) return -1
-    if (a.age > b.age) return 1
+
+            // level 3
+            // 1
+const sortByPopulation = Countries.slice().sort((a, b) => {
+    if (a.population > b.population) return -1
+    if (a.population < b.population) return 1
     return 0
 })
-console.log(users)
 
+console.log(sortByPopulation)
+
+const sortByName = Countries.slice().sort((a, b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+})
+
+console.log(sortByName)
+
+const sortByCapital = Countries.slice().sort((a, b) => {
+    if (a.capital < b.capital) return -1
+    if (a.capital > b.capital) return 1
+    return 0
+})
+
+console.log(sortByCapital)
+
+            // 2
+const mostSpokenLanguages = (arr, index) => Object.entries(arr.map((item) => item.languages).reduce((acc, curr) => acc.concat(curr)).reduce((acc, curr) => {
+    if (!acc[curr]) {
+        acc[curr] = 1
+    } else {
+        acc[curr]++
+    }
+    return acc
+}, {})).reduce((acc, curr) => {
+    let obj = {}
+    obj.country = curr[0]
+    obj.count = curr[1]
+    acc.push(obj)
+    return acc
+}, []).slice().sort((a, b) => {
+    if (a.count > b.count) return -1
+    if (a.count < b.count) return 1
+    return 0
+}).slice(0, index)
+
+
+console.log(mostSpokenLanguages(Countries, 12))
+console.log(mostSpokenLanguages(Countries, 3))
+
+            // 3
 console.log(Countries)
-const mostSpokenLanguages = (arr, index) => {
+const mostPopulatedCountries = (arr, index) => {
     return arr.slice().sort((a, b) => {
         if (a.population > b.population) return -1
         if (a.population < b.population) return 1
         return 0
-    }).slice(0, index)
+    }).slice(0, index).reduce((acc, curr) => {
+        let obj = {}
+        obj.country = curr.name
+        obj.population = curr.population
+        acc.push(obj)
+        return acc
+    }, [])
 }
 
-console.log(mostSpokenLanguages(Countries, 10))
-console.log(mostSpokenLanguages(Countries, 3))
+console.log(mostPopulatedCountries(Countries, 10))
+console.log(mostPopulatedCountries(Countries, 3))
 console.log(Countries)
 
+            // 4
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29]
+// console.log(ages.(33))
+// console.log(ages.indexOf((ages.length / 2) - 1))
+// console.log()
+
+
+const statistics = {
+    count: function () {
+        return ages.length
+    },
+    sum: function () {
+        return ages.reduce((acc, curr) => acc + curr)
+    },
+    max: function () {
+        let ans = ages[0]
+
+        for (let j = 1; j < ages.length; j++) {
+            if (ages[j] > ans) {
+                ans = ages[j]
+            }
+        }
+
+        return ans
+    },
+    min: function () {
+        let ans = ages[0]
+
+        for (let j = 1; j < ages.length; j++) {
+            if (ages[j] < ans) {
+                ans = ages[j]
+            }
+        }
+
+        return ans
+    },
+    range: function () {
+        return this.max() - this.min()
+    },
+    mean: function () {
+        return Math.round(this.sum() / this.count())
+    },
+    median: function () {
+        if (ages.length % 2 === 0) return ages.filter((item) => ages.indexOf(item) === ((ages.length / 2) - 1))
+    }
+}
+
+console.log(statistics.count())
+console.log(statistics.sum())
+console.log(statistics.max())
+console.log(statistics.min())
+console.log(statistics.range())
+console.log(statistics.mean())
+console.log(statistics.median())
 
 
 

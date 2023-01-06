@@ -190,16 +190,17 @@ const personalAccount = {
         return `${this.firstName} ${this.lastName}`
     },
     addIncome: function () {
-        return `${this.totalIncome()}`
+        return this.totalIncome()
     },
     addExpense: function () {
-        return `${this.totalExpense()}`
+        return this.totalExpense()
     },
     accountBalance: function () {
-        return `${this['incomes']['salary'] + this['incomes']['bonus'] + this['incomes']['roi'] - (this['expenses']['workers'] + this['expenses']['investment'] + this['expenses']['family'] + this['expenses']['charity'])}`
+        // return `${this['incomes']['salary'] + this['incomes']['bonus'] + this['incomes']['roi'] - (this['expenses']['workers'] + this['expenses']['investment'] + this['expenses']['family'] + this['expenses']['charity'])}`
+        return this.totalIncome() - this.totalExpense()
     }
 }
-
+console.log(109500000 - 35000000)
 console.log(personalAccount.totalIncome())
 console.log(personalAccount.totalExpense())
 console.log(personalAccount.addIncome())
