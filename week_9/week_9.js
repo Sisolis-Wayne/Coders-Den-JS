@@ -269,7 +269,8 @@ console.log(mostPopulatedCountries(Countries, 3))
 console.log(Countries)
 
             // 4
-const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29]
+// const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29]
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
 // console.log(ages.(33))
 // console.log(ages.indexOf((ages.length / 2) - 1))
 // console.log()
@@ -311,32 +312,19 @@ const statistics = {
         return Math.round(this.sum() / this.count())
     },
     median: function () {
-        if (ages.length % 2 === 0) return ages.filter((item) => ages.indexOf(item) === ((ages.length / 2) - 1))
+        if (ages.length % 2 !== 0) {
+            return ages.slice().sort((a, b) => a - b).filter((item) => ages.slice().sort((a, b) => a - b).indexOf(item) === ((ages.length / 2) - 0.5))[0]
+        }
     }
 }
 
 console.log(statistics.count())
 console.log(statistics.sum())
-console.log(statistics.max())
 console.log(statistics.min())
+console.log(statistics.max())
 console.log(statistics.range())
 console.log(statistics.mean())
 console.log(statistics.median())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
