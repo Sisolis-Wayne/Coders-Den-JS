@@ -285,13 +285,11 @@ const statistics = {
     },
     max: function () {
         let ans = ages[0]
-
         for (let j = 1; j < ages.length; j++) {
             if (ages[j] > ans) {
                 ans = ages[j]
             }
         }
-
         return ans
     },
     min: function () {
@@ -315,8 +313,42 @@ const statistics = {
         if (ages.length % 2 !== 0) {
             return ages.slice().sort((a, b) => a - b).filter((item) => ages.slice().sort((a, b) => a - b).indexOf(item) === ((ages.length / 2) - 0.5))[0]
         }
+    },
+    mode: function () {
+        return Object.entries(ages.reduce((acc, curr) => {
+            if (!acc[curr]) {
+                acc[curr] = 1
+            } else {
+                acc[curr]++
+            }
+            return acc
+        }, {})).reduce((acc, curr) => {
+            let obj = {}
+            obj.number = curr[0]
+            obj.count = curr[1]
+            acc.push(obj)
+            return acc
+        }, []).slice().sort((a, b) => {
+            if (a.count > b.count) return -1
+            if (a.count < b.count) return 1
+            return 0
+        }).slice(0, 1).reduce((acc, curr) => {
+            let obj = {}
+            obj.mode = curr.number
+            obj.count = curr.count
+            acc.push(obj)
+            return acc
+        }, [])
+    },
+    var: function () {
+        return ages.map((item) => (Math.pow((item - this.mean()), 2))).reduce((acc, curr) => acc + curr, 0) / this.count()
+    },
+    std: function () {
+        return Math.sqrt(this.var())
     }
 }
+
+// one function left to do
 
 console.log(statistics.count())
 console.log(statistics.sum())
@@ -325,6 +357,11 @@ console.log(statistics.max())
 console.log(statistics.range())
 console.log(statistics.mean())
 console.log(statistics.median())
+console.log(statistics.mode())
+console.log(statistics.var())
+console.log(statistics.std())
+
+
 
 
 
