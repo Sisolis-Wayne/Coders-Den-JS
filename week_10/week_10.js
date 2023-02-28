@@ -98,11 +98,17 @@ const mostSpokenLanguages = (arr, index) => {
         for (const lang of newSet3) {
                 const filteredLang = languages.filter((item) => item === lang)
                 // console.log(filteredLang)
-                langArr.push({ [lang]: filteredLang.length })
+                langArr.push({ country: lang, length: filteredLang.length })
         }
 
-        return langArr
-
+        return langArr.slice().sort((a, b) => {
+                if (a.length > b.length) return -1
+                if (a.length < b.length) return 1
+                return 0
+        }).slice(0, index).reduce((acc, curr) => {
+                acc.push({ [curr.country] : curr.length })
+                return acc
+        }, [])
        
 }
 
@@ -110,7 +116,11 @@ const mostSpokenLanguages = (arr, index) => {
 
 
 
-console.log(mostSpokenLanguages(Countries, 5))
+// console.log(mostSpokenLanguages(Countries))
+console.log(mostSpokenLanguages(Countries, 3))
+console.log(mostSpokenLanguages(Countries, 11))
+// console.log(mostSpokenLanguages(Countries, 5)[0])
+// console.log(mostSpokenLanguages(Countries, 5)[0].country)
 
 
 
