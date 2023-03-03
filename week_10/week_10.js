@@ -1,35 +1,35 @@
-        // level 1
-        // 1
+// level 1
+// 1
 const newSet = new Set()
 console.log(newSet)
 
-        // 2
+// 2
 for (let i = 0; i <= 10; i++) {
-    // console.log(i)
-    newSet.add(i)
+        // console.log(i)
+        newSet.add(i)
 }
 
 console.log(newSet)
 
-        // 3
+// 3
 newSet.delete(4)
 console.log(newSet)
 
-        // 4
+// 4
 newSet.clear()
 console.log(newSet)
 
-        // 5
+// 5
 const newCountries = ['Afghanistan', 'Djibouti', 'Maldives', 'Cuba', 'United Kingdom']
 const newSet2 = new Set()
 
 for (const country of newCountries) {
-    newSet2.add(country)
+        newSet2.add(country)
 }
 
 console.log(newSet2)
 
-        // 6
+// 6
 const countries = ['Finland', 'Sweden', 'Norway']
 const newMap = new Map()
 // newMap.set('Afghanistan', 'Afghanistan'.length)
@@ -40,16 +40,16 @@ for (const country of countries) {
 
 console.log(newMap)
 
-        // level 2
+// level 2
 const a = [4, 5, 8, 9]
 const b = [3, 4, 5, 7]
 
-        // 1
+// 1
 let c = [...a, ...b]
 const C = new Set(c) // union of a and b
 console.log(C)
 
-        // 2
+// 2
 const A = new Set(a)
 const B = new Set(b)
 let d = a.filter((item) => B.has(item))
@@ -57,16 +57,16 @@ const D = new Set(d) // intersection of a and b
 // console.log(d)
 console.log(D)
 
-        // 3
+// 3
 let e = a.filter((item) => !B.has(item)) // difference between a and b i.e a - b
 const E = new Set(e)
 console.log(E)
 
-        // level 3
+// level 3
 import { Countries } from "../week_9/countries_data.js"
 console.log(Countries)
 
-        // 1
+// 1
 // let nameOfCountries = []
 // for (const country of Countries) {
 //         nameOfCountries.push(country.languages)
@@ -78,7 +78,7 @@ console.log(languages)
 const newSet3 = new Set(languages)
 console.log(newSet3)
 
-        // 2
+// 2
 // let mostSpokenLanguages = []
 
 // for (const lang of newSet3) {
@@ -106,10 +106,10 @@ const mostSpokenLanguages = (arr, index) => {
                 if (a.length < b.length) return 1
                 return 0
         }).slice(0, index).reduce((acc, curr) => {
-                acc.push({ [curr.country] : curr.length })
+                acc.push({ [curr.country]: curr.length })
                 return acc
         }, [])
-       
+
 }
 
 // console.log(mostSpokenLanguages(Countries, 5).Pashto)

@@ -30,8 +30,8 @@ let c = [...a, ...b] // spread is another way to concat two arrays
 
 let C = new Set(c)
 
- console.log(C)
- console.log(c)
+console.log(C)
+console.log(c)
 
 console.log(a.concat(b)) // same result using concat
 
