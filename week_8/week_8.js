@@ -1,11 +1,11 @@
-            // level 1
-            // 1
+// level 1
+// 1
 const dog = {}
 
-            // 2
+// 2
 console.log(dog)
 
-            // 3
+// 3
 dog.name = 'Nozel'
 dog.legs = 'short'
 dog.color = 'brown'
@@ -16,14 +16,14 @@ dog.bark = function () {
 
 console.log(dog)
 
-            // 4
+// 4
 console.log(dog.name)
 console.log(dog.legs)
 console.log(dog.color)
 console.log(dog.age)
 console.log(dog.bark())
 
-            // 5
+// 5
 dog.breed = 'Wolf'
 dog.getDogInfo = function () {
     return `The name of my little wolf is ${this.name}. He has a ${this.color} color and is ${this.age} years old.`
@@ -32,7 +32,7 @@ dog.getDogInfo = function () {
 console.log(dog.breed)
 console.log(dog.getDogInfo())
 
-            // level 2
+// level 2
 const users = {
     Alex: {
         email: 'alex@alex.com',
@@ -85,7 +85,7 @@ const users = {
     }
 }
 
-            // 1
+// 1
 // Not done!!!
 const skills = Object.values(users)
 console.log(skills)
@@ -95,7 +95,7 @@ for (const select of skills) {
     if (select.skills.length === 8) console.log(select)
 }
 
-            // 2
+// 2
 // let countFalse = 0
 let loggedInUsers = 0
 for (const select of skills) {
@@ -118,7 +118,7 @@ for (const select of skills) {
 }
 console.log(UsersWith50pointsPlus)
 
-            // 3
+// 3
 const mern = Object.keys(users)
 console.log(mern)
 
@@ -131,7 +131,7 @@ for (const select of mern) {
 
 console.log(arr)
 
-            // 4
+// 4
 users.Akorede = {
     email: 'mohammedakoredest@gmail.com',
     skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
@@ -142,15 +142,15 @@ users.Akorede = {
 
 console.log(users)
 
-            // 5
+// 5
 const keys = Object.keys(users)
 console.log(keys)
 
-            // 6
+// 6
 const values = Object.values(users)
 console.log(values)
 
-            // 7
+// 7
 const countries = {
     name: 'Nigeria',
     capital: 'Abuja',
@@ -164,8 +164,8 @@ console.log(countries['population'])
 console.log(countries['languages'])
 
 
-            // level 3
-            // 1
+// level 3
+// 1
 const personalAccount = {
     firstName: 'Akorede',
     lastName: 'Mohammed',
@@ -208,7 +208,7 @@ console.log(personalAccount.addExpense())
 console.log(personalAccount.accountInfo())
 console.log(personalAccount.accountBalance())
 
-            // 2a
+// 2a
 const signUp = (un, em, pw) => {
     // un, em, pw refer to username, email, password respectively
     for (const select of Users) {
@@ -282,7 +282,7 @@ console.log(signUp('Akorede', 'mohammedakoredest@gmail.com', 123456))
 console.log(Users[5].username)
 console.log(signUp('Akorede', 'mohammedakoredest@gmail.com', 123456))
 
-            // 2b
+// 2b
 const signIn = (un, pw) => {
     for (const select of Users) {
         if (select.username === un && select.password === pw) {
@@ -295,13 +295,13 @@ const signIn = (un, pw) => {
 console.log(Users[4].username.toLowerCase())
 console.log(Users[4].isLoggedIn)
 Users[4].isLoggedIn = true
-console.log(Users[4].isLoggedIn) 
+console.log(Users[4].isLoggedIn)
 
 console.log(Users[5].isLoggedIn)
 console.log(signIn('Akorede', 123456))
 console.log(Users[5].isLoggedIn)
 
-            // 3a
+// 3a
 const rateProduct = (id, nameOfProduct, Rate) => {
     let rateInfo = {}
 
@@ -359,7 +359,7 @@ console.log(rateProduct('siuu15', 'laptoP', 5))
 // console.log(products[2].ratings[1].rate)
 // console.log(products[2].ratings[2].rate)
 
-            // 3b
+// 3b
 const averageRating = (nameOfProduct) => {
     let result = 0
 

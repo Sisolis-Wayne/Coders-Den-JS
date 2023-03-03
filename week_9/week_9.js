@@ -126,7 +126,7 @@ const extractedPrices = products.reduce((acc, curr) => {
 console.log(extractedPrices)
 
             // 3
-import { Countries } from "./countries_data.js"
+import { Countries } from "./countries_data.js" // I imported here
 console.log(Countries)
 
 const categorizeCountries = (arr, pattern) => {
