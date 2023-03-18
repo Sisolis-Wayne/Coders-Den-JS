@@ -145,7 +145,7 @@ const student = {
 
 // const newStudent = _.cloneDeep(student)
 // console.log(newStudent)
-// Don't know why but this method is showing referenceError in Chrome console.Works in Quokka console though. I instead use the method below 
+// Don't know why but this method is showing referenceError in Chrome console. Works in Quokka console though. I instead used the method below 
 
 const newStudent = JSON.parse(JSON.stringify(student))
 console.log(newStudent)
