@@ -46,13 +46,13 @@ const countris = [
     ['Sweden', 'Stockholm'],
     ['Norway', 'Oslo']
 ]
-const user = {
-    name: 'Asabeneh',
-    title: 'Programmer',
-    country: 'Finland',
-    city: 'Helsinki',
-    age: 250
-}
+// const user = {
+//     name: 'Asabeneh',
+//     title: 'Programmer',
+//     country: 'Finland',
+//     city: 'Helsinki',
+//     age: 250
+// }
 const users = [
     {
         name: 'Asabeneh',
@@ -93,7 +93,7 @@ console.log(countris)
 console.groupEnd()
 
 console.group('Users')
-console.log(user)
+// console.log(user)
 console.log(users)
 console.groupEnd()
 
@@ -101,7 +101,14 @@ console.groupEnd()
 
 
 
-
+const user = {
+    name: 'Asabeneh',
+    title: 'Programmer',
+    country: 'Finland',
+    city: 'Helsinki',
+    age: 250
+}
+console.table(user)
 
 
 
