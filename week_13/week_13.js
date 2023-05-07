@@ -32,7 +32,7 @@ console.table(users)
 
 
 
-export const Countries = [
+const Countries = [
     {
         name: 'Afghanistan',
         capital: 'Kabul',
@@ -2067,7 +2067,7 @@ console.groupEnd()
 
 // level 2
 // 1
-console.assert(10 > 2 * 10, 'No. 10 is not greater than 2 * 10')
+console.assert(10 < 2 * 10, 'No. 10 is not greater than 2 * 10')
 
 // 2
 console.warn('this is not a warning')

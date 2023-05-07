@@ -494,8 +494,8 @@ const convertHexaToRgb = (hex) => {
     // return `rgb(${arr})`
 }
 
-console.log(convertHexaToRgb('#800fff'))
-console.log(convertHexaToRgb('#0c8000'))
+console.log(convertHexaToRgb('#86756C'))
+console.log(convertHexaToRgb('#AB5429'))
 console.log(convertHexaToRgb('#C0C0C0'))
 
             // 6
