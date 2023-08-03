@@ -115,6 +115,7 @@ const solveQuadEquation = (a, b, c) => {
 
 
 console.log(solveQuadEquation(1, -1, -2))
+console.log(solveQuadEquation(1, -2, -15))
 console.log(solveQuadEquation(1, 4, 4))
 console.log(solveQuadEquation(1, 7, 12))
 console.log(solveQuadEquation('1', '0', '-1'))
