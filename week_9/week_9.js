@@ -348,7 +348,7 @@ const statistics = {
     }
 }
 
-// one function left to do
+// one function left to do: Frequency Distribution
 
 console.log(statistics.count())
 console.log(statistics.sum())
