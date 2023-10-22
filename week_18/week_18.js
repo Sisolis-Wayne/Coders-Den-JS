@@ -21,13 +21,13 @@ const getCountries = fetch(countriesAPI)
     return arr
 })
 .catch(error => {
-    error = 'Nkam ti mo ri Olohun mi o so tan o. Many many listening; Holy water upon my head and my feet'
+    error = 'Nkan ti mo ri Olohun mi o so tan o. Many many listening; Holy water upon my head and my feet'
     console.log(error)
 })
 const countries = await getCountries
 console.log(countries)
 
-// 2
+// level 2
 // 1
 // using PROMISE METHOD
 const getCatNames = async () => {
@@ -44,15 +44,15 @@ const getCatNames = async () => {
         }
         return arr
     } catch (error) {
-        console.log('well well well')
+        console.log('You see the rhythm plenty gan ni')
     }
 }
 
-// level 3
-// 1
 const catNames = await getCatNames()
 console.log(catNames)
 
+// level 3
+// 1
 const getCatWeight = async () => {
     try {
         const response = await fetch(catsAPI)
@@ -90,88 +90,6 @@ console.log(tenLargestCountries)
 // 3
 const totalLanguages  = countries.reduce((acc, curr) => acc + curr.languages.length, 0)
 console.log(totalLanguages)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
