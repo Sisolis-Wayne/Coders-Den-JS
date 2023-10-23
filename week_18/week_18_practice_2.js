@@ -24,14 +24,14 @@ fetch(url)
     console.error(error)
   }) // handling error if something wrong happens
 
-// const square = async function (n) {
-//     return n * n
-// }
+const square = async function (n) {
+    return n * n
+}
 
-// console.log(square(2))
+console.log(square(2))
 
-// const finalResult = await square(2)
-// console.log(finalResult)
+const finalResult = await square(2)
+console.log(finalResult)
 
 
 // 
@@ -39,12 +39,13 @@ const fetchData = async () => {
     try {
         const response = await fetch(url)
         const countries = await response.json()
-        console.log(countries)
+        return countries
     } catch (err) {
         console.error(err)
     }
 }
 
-fetchData()
+const ans = await fetchData()
+console.log(ans)
 
 
