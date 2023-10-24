@@ -22,7 +22,9 @@ h2.innerHTML = '30 days of javascript challenge';
 wrapper.appendChild(h2);
 
 const dateDiv = document.createElement('div');
-dateDiv.innerHTML = 'This is the div to display the date';
+// dateDiv.innerHTML = 'This is the div to display the date';
+dateDiv.style.paddingInline = '20px';
+dateDiv.style.marginBottom = '3px'
 wrapper.appendChild(dateDiv);
 
 const ul = document.createElement('ul');
@@ -55,6 +57,7 @@ li.forEach((each) => {
     for (let i = 0; i < 3; i++) {
         let newDiv = document.createElement('div');
         newDiv.innerHTML = `This is div ${i}`;
+        newDiv.classList.add('new-div');
         each.appendChild(newDiv);
     }
 
@@ -71,8 +74,10 @@ const colors = ['#731ebb', '#1d3062', '#9cc0e3', '#a2b040', '#262747', '#21bf73'
 
 function color() {
     const rand = Math.floor(Math.random() * colors.length)
+    const rand1 = Math.floor(Math.random() * colors.length)
     // console.log(rand);
-    span2020.style.color = colors[rand];
+    dateDiv.style.backgroundColor = colors[rand];
+    span2020.style.color = colors[rand1];
 }
 
 setInterval(color, 1000)
@@ -83,7 +88,39 @@ function date() {
     const min = date.getMinutes();
     const hr = date.getHours();
     const month = date.toLocaleString('default', { month: 'long' })
+    const year = date.getFullYear();
     // console.log(min)
+    dateDiv.innerHTML = `${month} ${year} ${hr}:${min}:${sec}`;
+
 }
 
 setInterval(date, 1000)
+
+// console.log(newDiv)
+// console.log(newLi)
+// console.log(li)
+const newDiv = document.querySelectorAll('.new-div');
+console.log(newDiv);
+
+for (let i = 0, j = 0; i < newDiv.length; i += 3, j++) {
+    // console.log(i);
+    newDiv[i].innerHTML = asabenehChallenges2020.challenges[j].name;
+}
+
+
+for (let i = 2, j = 0; i < newDiv.length; i += 3, j++) {
+    // console.log(i);
+    newDiv[i].innerHTML = asabenehChallenges2020.challenges[j].status;
+    if (asabenehChallenges2020.challenges[j].status.toLowerCase() === 'done') {
+        li[j].style.backgroundColor = '#21bf73'
+    }
+
+    if (asabenehChallenges2020.challenges[j].status.toLowerCase() === 'ongoing') {
+        li[j].style.backgroundColor = '#fddb3a'
+    }
+
+    if (asabenehChallenges2020.challenges[j].status.toLowerCase() === 'coming') {
+        li[j].style.backgroundColor = '#fd5e53'
+    }
+}
+
