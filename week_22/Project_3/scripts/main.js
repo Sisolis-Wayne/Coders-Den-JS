@@ -124,3 +124,15 @@ for (let i = 2, j = 0; i < newDiv.length; i += 3, j++) {
     }
 }
 
+console.log(newDiv[1])
+
+const first = newDiv[1];
+first.innerHTML = `
+                    <details>
+                    <summary>Python</summary>
+                    <p>Django</p>
+                    <p>Flask</p>
+                    <p>Numpy</p>
+                    <p>Pandas</p>
+                    </details>                    
+`
