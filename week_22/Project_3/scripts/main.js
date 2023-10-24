@@ -134,5 +134,9 @@ first.innerHTML = `
                     <p>Flask</p>
                     <p>Numpy</p>
                     <p>Pandas</p>
-                    </details>                    
-`
+                    </details>`
+
+first.style.height = 'auto'
+
+console.log(li[0])
+li[0].style.height = 'auto'
