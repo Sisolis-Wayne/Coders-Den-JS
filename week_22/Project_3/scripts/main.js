@@ -63,7 +63,8 @@ li.forEach((each) => {
 
     each.style.display = 'flex';
     each.style.justifyContent = 'space-between';
-    each.style.alignItems = 'center'
+    each.style.alignItems = 'center';
+    each.style.height = 'auto';
 })
 
 const span2020 = document.querySelector('h1 span');
@@ -139,4 +140,3 @@ first.innerHTML = `
 first.style.height = 'auto'
 
 console.log(li[0])
-li[0].style.height = 'auto'
