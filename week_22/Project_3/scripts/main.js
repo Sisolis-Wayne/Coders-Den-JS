@@ -50,7 +50,7 @@ console.log(li);
 li.forEach((each) => {
     each.style.width = '1000px';
     each.style.height = '46px';
-    each.style.backgroundColor = 'coral';
+    // each.style.backgroundColor = 'coral';
     each.style.marginBottom = '1px';
     each.style.paddingInline = '35px'
 
@@ -125,9 +125,10 @@ for (let i = 2, j = 0; i < newDiv.length; i += 3, j++) {
     }
 }
 
-console.log(newDiv[1])
 
+//........................................................
 const first = newDiv[1];
+console.log(first)
 first.innerHTML = `
                     <details>
                     <summary>Python</summary>
@@ -135,8 +136,37 @@ first.innerHTML = `
                     <p>Flask</p>
                     <p>Numpy</p>
                     <p>Pandas</p>
+                    <p>Pand</p>
                     </details>`
 
-first.style.height = 'auto'
+// first.style.height = 'auto'
 
-console.log(li[0])
+// console.log(li[0])
+
+const firstAgain = document.querySelectorAll(`.new-div details`);
+console.log(firstAgain)
+console.log(firstAgain[0])
+const n = document.createElement('p');
+n.innerHTML = 'new para'
+firstAgain[0].appendChild(n);
+//........................................................
+
+
+for  (let i = 1, k = 0; i < newDiv.length; i += 3, k++) {
+    console.log(i)
+
+    newDiv[i].innerHTML = `
+                            <details>
+                            <summary>Mython</summary>
+                            </details>
+    `
+
+    for (let j = 0; j < asabenehChallenges2020.challenges[k].topics.length; j++) {
+        let newP = document.createElement('p');
+        newP.innerHTML = `${asabenehChallenges2020.challenges[k].topics[j]}`;
+        const newDivUnder = document.querySelectorAll(`.new-div details`);
+        newDivUnder[k].appendChild(newP);
+        console.log(newDivUnder)
+    }
+
+}
