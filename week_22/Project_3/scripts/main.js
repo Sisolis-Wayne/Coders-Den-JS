@@ -13,12 +13,12 @@ wrapper.style.flexDirection = 'column';
 wrapper.style.alignItems = 'center';
 
 const h1 = document.createElement('h1');
-h1.innerHTML = `Asabeneh Yetayeh challlenges in <span>2020</span>`;
+h1.innerHTML = `${asabenehChallenges2020.challengeTitle} in <span>${asabenehChallenges2020.challengeYear}</span>`;
 wrapper.appendChild(h1);
 
 
 const h2 = document.createElement('h2');
-h2.innerHTML = '30 days of javascript challenge';
+h2.innerHTML = `${asabenehChallenges2020.challengeSubtitle}`;
 wrapper.appendChild(h2);
 
 const dateDiv = document.createElement('div');
@@ -105,7 +105,11 @@ console.log(newDiv);
 
 for (let i = 0, j = 0; i < newDiv.length; i += 3, j++) {
     // console.log(i);
-    newDiv[i].innerHTML = asabenehChallenges2020.challenges[j].name;
+    if (asabenehChallenges2020.challenges[j].githubUrl) {
+        newDiv[i].innerHTML = `<a href='${asabenehChallenges2020.challenges[j].githubUrl}' target='_blank'>${asabenehChallenges2020.challenges[j].name}</a>`
+    } else {
+        newDiv[i].innerHTML = asabenehChallenges2020.challenges[j].name;
+    }
 }
 
 
@@ -127,37 +131,39 @@ for (let i = 2, j = 0; i < newDiv.length; i += 3, j++) {
 
 
 //........................................................
-const first = newDiv[1];
-console.log(first)
-first.innerHTML = `
-                    <details>
-                    <summary>Python</summary>
-                    <p>Django</p>
-                    <p>Flask</p>
-                    <p>Numpy</p>
-                    <p>Pandas</p>
-                    <p>Pand</p>
-                    </details>`
+// const first = newDiv[1];
+// console.log(first)
+// first.innerHTML = `
+//                     <details>
+//                     <summary>Python</summary>
+//                     <p>Django</p>
+//                     <p>Flask</p>
+//                     <p>Numpy</p>
+//                     <p>Pandas</p>
+//                     <p>Pand</p>
+//                     </details>`
 
-// first.style.height = 'auto'
+// // first.style.height = 'auto'
 
-// console.log(li[0])
+// // console.log(li[0])
 
-const firstAgain = document.querySelectorAll(`.new-div details`);
-console.log(firstAgain)
-console.log(firstAgain[0])
-const n = document.createElement('p');
-n.innerHTML = 'new para'
-firstAgain[0].appendChild(n);
-//........................................................
+// const firstAgain = document.querySelectorAll(`.new-div details`);
+// console.log(firstAgain)
+// console.log(firstAgain[0])
+// const n = document.createElement('p');
+// n.innerHTML = 'new para'
+// firstAgain[0].appendChild(n);
+// //........................................................
 
+
+const nameOfTrack = ['Python', 'JavaScript', 'HTML & CSS', 'React', 'ReactNative', 'Fullstack', 'Data Analysis', 'Machine Learning']
 
 for  (let i = 1, k = 0; i < newDiv.length; i += 3, k++) {
-    console.log(i)
+    // console.log(i) // check how to change the summary marker
 
     newDiv[i].innerHTML = `
                             <details>
-                            <summary>Mython</summary>
+                            <summary>${nameOfTrack[k]}</summary> 
                             </details>
     `
 
@@ -166,7 +172,35 @@ for  (let i = 1, k = 0; i < newDiv.length; i += 3, k++) {
         newP.innerHTML = `${asabenehChallenges2020.challenges[k].topics[j]}`;
         const newDivUnder = document.querySelectorAll(`.new-div details`);
         newDivUnder[k].appendChild(newP);
-        console.log(newDivUnder)
+        // console.log(newDivUnder)
     }
 
 }
+
+
+const newP = document.querySelectorAll('.new-div details p')
+console.log(newP);
+
+newP.forEach((each) => {
+    each.style.fontSize = '12px';
+    each.style.margin = '0';
+    each.style.marginBottom = '3px';
+})
+
+const nameOfAuthor = document.createElement('h3');
+nameOfAuthor.innerHTML = `${asabenehChallenges2020.author.firstName} ${asabenehChallenges2020.author.lastName}`;
+wrapper.appendChild(nameOfAuthor);
+
+const iconDiv = document.createElement('div');
+iconDiv.classList.add('icon-div');
+wrapper.appendChild(iconDiv);
+
+console.log(iconDiv);
+
+let iconNum = 0;
+
+for (let i = 0; i < asabenehChallenges2020.author.socialLinks.length; i++) {
+    if (asabenehChallenges2020.author.socialLinks[i].fontawesomeIcon) iconNum++
+}
+
+console.log(iconNum);
