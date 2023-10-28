@@ -7,4 +7,4 @@ function color() {
 }
 
 // setInterval(color, 1000);
-console.log(colors.length)
+color();

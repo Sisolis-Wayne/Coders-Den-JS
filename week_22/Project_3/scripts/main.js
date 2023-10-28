@@ -50,10 +50,11 @@ const li = document.querySelectorAll("li");
 console.log(li);
 li.forEach((each) => {
   each.style.width = "800px";
-  each.style.height = "46px";
+  // each.style.height = "46px";
   // each.style.backgroundColor = 'coral';
   each.style.marginBottom = "1px";
   each.style.paddingInline = "35px";
+  each.style.paddingBlock = "15px";
 
   for (let i = 0; i < 3; i++) {
     let newDiv = document.createElement("div");
@@ -114,9 +115,7 @@ console.log(newDiv);
 for (let i = 0, j = 0; i < newDiv.length; i += 3, j++) {
   // console.log(i);
   if (asabenehChallenges2020.challenges[j].githubUrl) {
-    newDiv[
-      i
-    ].innerHTML = `<a href='${asabenehChallenges2020.challenges[j].githubUrl}' target='_blank'>${asabenehChallenges2020.challenges[j].name}</a>`;
+    newDiv[i].innerHTML = `<a href='${asabenehChallenges2020.challenges[j].githubUrl}' target='_blank'>${asabenehChallenges2020.challenges[j].name}</a>`;
   } else {
     newDiv[i].innerHTML = asabenehChallenges2020.challenges[j].name;
   }
@@ -321,21 +320,39 @@ divKeyword.innerHTML = `<h4>Keyword</h4>`;
 wrapper.appendChild(divKeyword);
 
 const divUnderKeywords = document.createElement('div');
-divUnderKeywords.style.width = '800px';
+// divUnderKeywords.style.width = '800px';
+divUnderKeywords.style.marginLeft = '36px';
 divUnderKeywords.style.display = 'flex';
+divUnderKeywords.style.justifyContent = 'space-between';
 divUnderKeywords.style.flexWrap = 'wrap';
 divKeyword.appendChild(divUnderKeywords);
 
 for (let i = 0; i < asabenehChallenges2020.keywords.length; i++) {
+  if (asabenehChallenges2020.keywords[i] === 'Web Storage' || asabenehChallenges2020.keywords[i] === 'localStorage' || asabenehChallenges2020.keywords[i] === 'sessionStorage') continue;
   const newkeyword = document.createElement('div');
-  newkeyword.innerHTML = `${asabenehChallenges2020.keywords[i]}`;
-  newkeyword.style.backgroundColor = 'yellow';
-  // newkeyword.style.width = 'auto'
-  newkeyword.style.marginLeft = '10px';
-  newkeyword.style.paddingRight = '40px';
-  // newkeyword.style.padding = '4px';
-  newkeyword.style.border = '1px solid yellow';
-  newkeyword.style.marginBottom = '4px';
-  newkeyword.style.borderRadius = '20%';
+  newkeyword.classList.add('new-key-word');
+  newkeyword.innerHTML = `<span class='new-key-word-span'># ${asabenehChallenges2020.keywords[i]}</span>`;
   divUnderKeywords.appendChild(newkeyword);
 }
+
+const newkeyword = document.querySelectorAll('.new-key-word');
+// console.log(newkeyword);
+newkeyword.forEach((each) => {
+  each.style.marginBottom = '21px';
+
+})
+
+const newKeyWordSpan = document.querySelectorAll('.new-key-word-span');
+console.log(newKeyWordSpan);
+
+const colorsKeywords = ['#693860', '#009841', '#e2ec4e', '#cb577c', '#e74d58', '#23de8b', '#defd8d', '#e3e114', '#d91892', '#e0a9cb', '#f0d349', '#2baf07', '#cabe66', '#1535bd', '#01a20f', '#21f0bc', '#6c9284', '#f05167', '#757c7f', '#5d9e6f', '#c94b65', '#265712', '#b8c9db', '#a79ae2', '#844445', '#10c619', '#a2552d', '#509ea7', '#9b8a68', '#fce84c', '#88cce6', '#66de30', '#fce84c', '#88cce6', '#66de30'];
+console.log(colorsKeywords.length);
+
+newKeyWordSpan.forEach((each, i) => {
+  each.style.backgroundColor = `${colorsKeywords[i]}`;
+  each.style.paddingInline = '13px';
+  each.style.paddingBlock = '7px';
+  each.style.borderRadius = '20px';
+  each.style.marginRight = '7px';
+  each.style.fontStyle = 'italic'
+})
