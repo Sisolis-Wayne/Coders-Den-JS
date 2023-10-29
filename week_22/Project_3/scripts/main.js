@@ -134,9 +134,7 @@ function date() {
 
 setInterval(date, 1000);
 
-// console.log(newDiv)
-// console.log(newLi)
-// console.log(li)
+
 const newDiv = document.querySelectorAll(".new-div");
 console.log(newDiv);
 
