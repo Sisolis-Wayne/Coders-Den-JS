@@ -1,5 +1,5 @@
 import { asabenehChallenges2020 } from "../data/challenges_info.js";
-console.log(asabenehChallenges2020);
+// console.log(asabenehChallenges2020);
 
 document.body.style.margin = "0";
 document.body.style.padding = "0";
@@ -16,16 +16,31 @@ wrapper.style.alignItems = "center";
 
 const h1 = document.createElement("h1");
 h1.innerHTML = `${asabenehChallenges2020.challengeTitle} in <span>${asabenehChallenges2020.challengeYear}</span>`;
+h1.style.margin = '0';
+h1.style.padding = '0';
 wrapper.appendChild(h1);
 
 const h2 = document.createElement("h2");
 h2.innerHTML = `${asabenehChallenges2020.challengeSubtitle}`;
+h2.style.margin = '0';
+h2.style.marginTop = '-6px';
+h2.style.marginBottom = '10px';
+h2.style.fontWeight = '100';
+h2.style.textDecoration = 'underline';
 wrapper.appendChild(h2);
 
 const dateDiv = document.createElement("div");
 // dateDiv.innerHTML = 'This is the div to display the date';
 dateDiv.style.paddingInline = "20px";
-dateDiv.style.marginBottom = "3px";
+// dateDiv.style.marginBottom = "50px";
+dateDiv.style.width = '300px';
+dateDiv.style.height = '30px';
+dateDiv.style.borderRadius = '30px';
+dateDiv.style.marginBottom = '15px';
+dateDiv.style.fontSize = '12px';
+dateDiv.style.display = 'flex';
+dateDiv.style.alignItems = 'center';
+dateDiv.style.justifyContent = 'center';
 wrapper.appendChild(dateDiv);
 
 const ul = document.createElement("ul");
@@ -67,6 +82,9 @@ li.forEach((each) => {
   each.style.justifyContent = "space-between";
   each.style.alignItems = "center";
   each.style.height = "auto";
+  each.style.borderTopRightRadius = '30px';
+  each.style.borderBottomLeftRadius = '30px';
+  each.style.borderBottomRightRadius = '30px';
 });
 
 const span2020 = document.querySelector("h1 span");
@@ -95,12 +113,22 @@ setInterval(color, 1000);
 
 function date() {
   const date = new Date();
-  const sec = date.getSeconds();
-  const min = date.getMinutes();
-  const hr = date.getHours();
+  let sec = date.getSeconds();
+  let min = date.getMinutes();
+  let hr = date.getHours();
   const month = date.toLocaleString("default", { month: "long" });
   const year = date.getFullYear();
-  // console.log(min)
+
+  if (sec < 10) {
+    sec = `0${sec}`;
+  }
+  if (min < 10) {
+    min = `0${min}`;
+  }
+  if (hr < 10) {
+    hr = `0${hr}`;
+  }
+
   dateDiv.innerHTML = `${month} ${year} ${hr}:${min}:${sec}`;
 }
 
@@ -203,7 +231,9 @@ newP.forEach((each) => {
 const nameOfAuthor = document.createElement("h3");
 nameOfAuthor.innerHTML = `${asabenehChallenges2020.author.firstName} ${asabenehChallenges2020.author.lastName}`;
 nameOfAuthor.style.textAlign = "center";
-nameOfAuthor.style.fontSize = "20px";
+nameOfAuthor.style.fontSize = "28px";
+// nameOfAuthor.style.margin = '0';
+nameOfAuthor.style.marginBottom = '10px';
 wrapper.appendChild(nameOfAuthor);
 
 const iconDiv = document.createElement("div");
@@ -241,7 +271,7 @@ const newLiAgain = document.querySelectorAll(".new-li-again");
 console.log(newLiAgain);
 
 newLiAgain.forEach((each) => {
-  each.style.fontSize = "25px";
+  each.style.fontSize = "33px";
   // each.style.color = 'black';
   each.style.marginLeft = "10px";
 });
@@ -286,6 +316,7 @@ const moreAbout = ['Titles', 'Skills', 'Qualifications'];
 const emojiArr = ['✅','📖','👨‍🎓'];
 
 for (let i = 0; i < otherInfoDivs.length; i++) {
+  // moreAbout[i].sytle.fontWeight = 'bold';
   otherInfoDivs[i].innerHTML = `<p>${moreAbout[i]}</p>`;
   // nD stands for new div
   
@@ -309,8 +340,13 @@ for (let i = 0; i < otherInfoDivs.length; i++) {
     nD.classList.add('n-d');
     otherInfoDivs[i].appendChild(nD);
   }
-
 }
+
+const otherInfoDivsP = document.querySelectorAll('.other-info-divs p');
+// console.log(otherInfoDivsP);
+otherInfoDivsP.forEach((each) => {
+  each.style.fontWeight = 'bold';
+})
 
 const divKeyword = document.createElement('div');
 divKeyword.style.width = '800px';
@@ -345,7 +381,7 @@ newkeyword.forEach((each) => {
 const newKeyWordSpan = document.querySelectorAll('.new-key-word-span');
 console.log(newKeyWordSpan);
 
-const colorsKeywords = ['#693860', '#009841', '#e2ec4e', '#cb577c', '#e74d58', '#23de8b', '#defd8d', '#e3e114', '#d91892', '#e0a9cb', '#f0d349', '#2baf07', '#cabe66', '#1535bd', '#01a20f', '#21f0bc', '#6c9284', '#f05167', '#757c7f', '#5d9e6f', '#c94b65', '#265712', '#b8c9db', '#a79ae2', '#844445', '#10c619', '#a2552d', '#509ea7', '#9b8a68', '#fce84c', '#88cce6', '#66de30', '#fce84c', '#88cce6', '#66de30'];
+const colorsKeywords = ['#693860', '#009841', '#e2ec4e', '#cb577c', '#e74d58', '#23de8b', '#defd8d', '#e3e114', '#d91892', '#e0a9cb', '#f0d349', '#2baf07', '#cabe66', '#1535bd', '#01a20f', '#21f0bc', '#6c9284', '#f05167', '#757c7f', '#5d9e6f', '#c94b65', '#265712', '#b8c9db', '#a79ae2', '#844445', '#10c619', '#a2552d', '#509ea7', '#9b8a68', '#fce84c', '#88cce6', '#66de30'];
 console.log(colorsKeywords.length);
 
 newKeyWordSpan.forEach((each, i) => {
