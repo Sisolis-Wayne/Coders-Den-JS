@@ -10,6 +10,9 @@ class studentObj {
         this.enrolledkeys = enrolledkeys;
         this.skills = [];
     }
+    /**
+     * @param {string} skill
+     */
     set setSkill(skill) {
         this.skills.push(skill)
     }
@@ -32,3 +35,4 @@ console.log(localStorage)
 
 localStorage.setItem('student1', JSON.stringify(student1));
 console.log(localStorage);
+localStorage.clear();

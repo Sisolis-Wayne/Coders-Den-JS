@@ -25,7 +25,7 @@ h2.style.margin = '0px';
 document.body.appendChild(h2);
 
 const h3 = document.createElement('h3');
-h3.innerHTML = 'WORLD COUNTRIES LIST';
+// h3.innerHTML = 'WORLD COUNTRIES LIST';
 h3.style.margin = '0px';
 h3.style.fontSize = '10px';
 h3.style.fontWeight = '100';
@@ -33,7 +33,7 @@ h3.innerHTML = '30daysOfJavaScript: DOM day 2';
 document.body.appendChild(h3);
 
 const h3_1 = document.createElement('h3');
-h3_1.innerHTML = 'WORLD COUNTRIES LIST';
+// h3_1.innerHTML = 'WORLD COUNTRIES LIST';
 h3_1.style.margin = '0px';
 h3_1.style.fontSize = '10px';
 h3_1.style.fontWeight = '100';
@@ -44,7 +44,7 @@ document.body.appendChild(h3_1);
 const div = document.createElement('div');
 // div.innerHTML = 'this is a new div';
 div.classList.add('countries-div');
-div.style.width = `${107 * 6}px`;
+div.style.width = `${106 * 6}px`;
 div.style.margin = 'auto'
 div.style.display = 'flex';
 div.style.flexWrap = 'wrap';
